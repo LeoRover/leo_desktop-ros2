@@ -6,28 +6,31 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('leo_viz')
+    pkg_share = get_package_share_directory("leo_viz")
 
-    return LaunchDescription([
-        DeclareLaunchArgument(
-            name='config',
-            default_value='robot',
-            description="The name of the cofig to use with RViz",
-        ),
-        DeclareLaunchArgument(
-            name='rviz_file',
-            default_value=[
-                pkg_share, '/rviz/', LaunchConfiguration('config'), '.rviz'
-            ],
-            description="Path to the config file for RViz",
-        ),
-        Node(
-            name='rviz2',
-            package='rviz2',
-            executable='rviz2',
-            output='screen',
-            arguments=[
-                '-d', LaunchConfiguration('rviz_file')
-            ],
-        )
-    ])
+    return LaunchDescription(
+        [
+            DeclareLaunchArgument(
+                name="config",
+                default_value="robot",
+                description="The name of the config to use with RViz",
+            ),
+            DeclareLaunchArgument(
+                name="rviz_file",
+                default_value=[
+                    pkg_share,
+                    "/rviz/",
+                    LaunchConfiguration("config"),
+                    ".rviz",
+                ],
+                description="Path to the config file for RViz",
+            ),
+            Node(
+                name="rviz2",
+                package="rviz2",
+                executable="rviz2",
+                output="screen",
+                arguments=["-d", LaunchConfiguration("rviz_file")],
+            ),
+        ]
+    )
