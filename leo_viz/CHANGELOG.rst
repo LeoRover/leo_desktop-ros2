@@ -2,8 +2,8 @@
 Changelog for package leo_viz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2022-09-21)
+------------------
 * Use compressed image topic for camera images in rviz config
 * Contributors: Błażej Sowa
 
