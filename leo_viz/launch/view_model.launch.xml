@@ -5,7 +5,7 @@
   <arg
     name="mecanum_wheels"
     default="false"
-    description="Flag specifying wheel types of the robot" />
+    description="Flag specifying wheel types of the robot for visualization purposes" />
 
   <include file="$(find-pkg-share leo_description)/launch/state_publisher.launch.xml">
     <arg name="mecanum_wheels" value="$(var mecanum_wheels)"/>
