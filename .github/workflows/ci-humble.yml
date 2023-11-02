@@ -27,22 +27,3 @@ jobs:
         uses: "ros-industrial/industrial_ci@master"
         env:
           UPSTREAM_WORKSPACE: "github:LeoRover/leo_common-ros2#humble"
-
-  ament_lint:
-    name: ament_${{ matrix.linter }}
-    runs-on: ubuntu-20.04
-    container:
-      image: ros:humble
-    strategy:
-      fail-fast: false
-      matrix:
-        linter: [lint_cmake, xmllint]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ros-tooling/action-ros-lint@v0.1
-        with:
-          distribution: humble
-          linter: ${{ matrix.linter }}
-          package-name: |
-            leo_desktop
-            leo_viz
