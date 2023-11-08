@@ -2,8 +2,8 @@
 Changelog for package leo_viz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2023-11-08)
+------------------
 * CI update
 * Contributors: Błażej Sowa
 
